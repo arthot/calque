@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/arthot/calque",
-  "moduleType": [],
+  "moduleType": [ ],
   "private": true,
   "ignore": [
     "**/.*",
@@ -17,11 +17,14 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "2.1.4",
     "winjs": "~4.4.0",
     "knockout-winjs": "~2.4.0",
     "knockout": "~3.4.0",
     "knockout-validation": "~2.0.3",
     "knockout-postbox": "~0.5.2",
-    "bower-knockout-mapping": "~2.5.0"
+    "bower-knockout-mapping": "~2.5.0",
+    "lodash": "3.10.1",
+    "mathjs": "2.4.2"
   }
 }

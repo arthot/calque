@@ -63,6 +63,9 @@
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js.map" />
+    <Content Include="bower_components\jquery\dist\jquery.js" />
+    <Content Include="bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="bower_components\jquery\dist\jquery.min.map" />
     <Content Include="bower_components\knockout-postbox\build\knockout-postbox.js" />
     <Content Include="bower_components\knockout-postbox\build\knockout-postbox.min.js" />
     <Content Include="bower_components\knockout-validation\dist\knockout.validation.js" />
@@ -71,6 +74,10 @@
     <Content Include="bower_components\knockout-winjs\js\knockout-winjs.js" />
     <Content Include="bower_components\knockout\dist\knockout.debug.js" />
     <Content Include="bower_components\knockout\dist\knockout.js" />
+    <Content Include="bower_components\lodash\lodash.js" />
+    <Content Include="bower_components\mathjs\dist\math.js" />
+    <Content Include="bower_components\mathjs\dist\math.map" />
+    <Content Include="bower_components\mathjs\dist\math.min.js" />
     <Content Include="bower_components\winjs\css\ui-dark.css" />
     <Content Include="bower_components\winjs\css\ui-dark.min.css" />
     <Content Include="bower_components\winjs\css\ui-light.css" />
