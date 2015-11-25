@@ -1,2 +1,33 @@
 ﻿body {
+    height: 100%;
+}
+
+header {
+    display: block;
+    white-space: nowrap;
+
+    menu {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li:nth-last-child(3) {
+            flex: 1; /* Push Settings & Help to the bottom */
+        }
+    }
+}
+
+.win-splitview-pane-closed .win-splitviewcommand-label {
+    /* Make sure pane content doesn't scroll */
+    /* if SplitViewCommand label receives focus while pane is closed. */
+    visibility: hidden;
 }

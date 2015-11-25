@@ -23,9 +23,30 @@
     <!-- Calque references -->
     <link href="styles/themes/dark.css" rel="stylesheet" />
     <link href="styles/default.css" rel="stylesheet" />
-    <script src="js/default.js"></script>
+    <script src="core/default.js"></script>
 </head>
-<body class="win-type-body">
-    <p>Content goes here</p>
+<body id="app" class="win-type-body" data-win-control="WinJS.UI.SplitView">
+    <header>
+        <menu>
+            <li>
+                <button class="win-splitviewpanetoggle"
+                        data-win-control="WinJS.UI.SplitViewPaneToggle"
+                        data-win-options="{ splitView: select('#app') }"></button>
+                <span class="win-h3">Calque</span>
+            </li>
+            <li>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Workspace', icon: 'home'}"></div>
+            </li>
+            <li>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Help', icon: 'help'}"></div>
+            </li>
+            <li>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+            </li>
+        </menu>
+    </header>
+    <main id="workspace">
+        <h2 class="win-h2">SplitView Content area</h2>
+    </main>
 </body>
 </html>
