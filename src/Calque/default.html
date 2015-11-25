@@ -41,12 +41,15 @@
                 <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Help', icon: 'help'}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings', onclick: viewModel.Help.show()}"></div>
             </li>
         </menu>
     </header>
     <main id="workspace">
-        <h2 class="win-h2">SplitView Content area</h2>
+        <h2 class="win-h2">Workspace</h2>
     </main>
+    <script>
+        var viewModel = new WorkspaceViewModel();
+    </script>
 </body>
 </html>

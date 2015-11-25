@@ -97,6 +97,12 @@
     <Content Include="core\default.js">
       <DependentUpon>default.ts</DependentUpon>
     </Content>
+    <Content Include="core\help.js">
+      <DependentUpon>help.ts</DependentUpon>
+    </Content>
+    <Content Include="core\workspace.js">
+      <DependentUpon>workspace.ts</DependentUpon>
+    </Content>
     <Content Include="default.html" />
     <Content Include="gulpfile.js" />
     <Content Include="images\BadgeLogo.scale-400.png" />
@@ -108,10 +114,13 @@
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
     <TypeScriptCompile Include="core\default.ts" />
+    <Content Include="pages\help.html" />
     <Content Include="styles\default.css">
       <DependentUpon>default.less</DependentUpon>
     </Content>
     <Content Include="tsd.json" />
+    <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\workspace.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />

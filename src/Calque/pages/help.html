@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Options</title>
+
+    <!-- WinJS references -->
+    <link href="bower_components/winjs/css/ui-dark.css" rel="stylesheet" />
+    <script src="bower_components/winjs/js/base.js"></script>
+    <script src="bower_components/winjs/js/ui.js"></script>
+
+    <!-- App references -->
+    <script src="../core/help.js"></script>
+</head>
+<body>
+    <div id="options" class="win-settingsflyout" data-win-control="WinJS.UI.SettingsFlyout" data-win-options="{ width:'narrow' }">
+        <div class="win-header">
+            <button id="backButton" class="win-backbutton" aria-label="Back" onclick="WinJS.UI.SettingsFlyout.show()"></button>
+            <div class="win-label">Options</div>
+        </div>
+        <div class="win-content">
+            <div class="win-settings-section">
+                <p>
+                    <label>Use feet or meters</label>
+                    <label>
+                        <input id="feet" name="feetOrMeters" type="radio" value="Feet" checked />Feet
+                    </label>
+                    <label>
+                        <input id="meters" name="feetOrMeters" type="radio" value="Meters" />Meters
+                    </label>
+                </p>
+                <p>
+                    <label for="refreshInterval">Refresh interval in minutes</label>
+                    <input id="refreshInterval" name="refreshInterval" type="range" min="0" max="15" value="1" />
+                </p>
+                <p>
+                    <label for="movementThreshold">Movement threshold in feet</label>
+                    <input id="movementThreshold" name="movementThreshold" type="range" min="0" max="100" value="50" />
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
