@@ -213,3 +213,6 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 src/Calque/styles/**/*.css
+typings/
+src/Calque/core/**/*.js
+src/Calque/core/**/*.map
