@@ -32,11 +32,23 @@ header {
     visibility: hidden;
 }
 
-#workspace {
-    float: left;
-}
-
 #help {
-    float: right;
-    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 350px;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: auto;
+    font-family: Arial;
+
+    pre {
+        margin: 0.5em 0;
+        &:after {
+            content: attr(data-result);
+            color: grey;
+        }
+    }
 }
