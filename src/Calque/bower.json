@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
+    "requirejs": "2.1.22",
+    "text": "2.0.14",
     "jquery": "2.1.4",
     "winjs": "~4.4.0",
     "knockout-winjs": "~2.4.0",
