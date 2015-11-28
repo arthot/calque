@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>Calque</title>
 
+    <link href="styles/themes/dark.css" rel="stylesheet" />
+    <link href="styles/default.css" rel="stylesheet" />
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/mathjs/dist/math.js"></script>
@@ -15,15 +18,13 @@
 
     <!-- Knockout -->
     <script src="bower_components/knockout/dist/knockout.debug.js"></script>
-    <script src="bower_components/bower-knockout-mapping/dist/bower-knockout-mapping.js"></script>
-    <script src="bower_components/knockout/dist/knockout.validation.js"></script>
+    <script src="bower_components/bower-knockout-mapping/dist/knockout.mapping.js"></script>
+    <script src="bower_components/knockout-validation/dist/knockout.validation.js"></script>
     <script src="bower_components/knockout-winjs/js/knockout-winjs.js"></script>
     <script src="bower_components/knockout-postbox/build/knockout-postbox.js"></script>
 
-    <!-- Calque references -->
-    <link href="styles/themes/dark.css" rel="stylesheet" />
-    <link href="styles/default.css" rel="stylesheet" />
-    <script src="core/default.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="core/main.js"></script>
 </head>
 <body id="app" class="win-type-body" data-win-control="WinJS.UI.SplitView">
     <header>
@@ -41,15 +42,13 @@
                 <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Help', icon: 'help'}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings', onclick: viewModel.Help.show()}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
             </li>
         </menu>
     </header>
     <main id="workspace">
         <h2 class="win-h2">Workspace</h2>
     </main>
-    <script>
-        var viewModel = new WorkspaceViewModel();
-    </script>
+    <help id="help"></help>
 </body>
 </html>

@@ -1,44 +1,22 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Options</title>
+﻿<h2>Expressions</h2>
+<pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
+<pre data-result=" = 2i">sqrt(-4)</pre>
+<pre data-result=" = 5.08 cm">2 inch to cm</pre>
+<pre data-result=" = 0.70711">cos(45 deg)</pre>
 
-    <!-- WinJS references -->
-    <link href="bower_components/winjs/css/ui-dark.css" rel="stylesheet" />
-    <script src="bower_components/winjs/js/base.js"></script>
-    <script src="bower_components/winjs/js/ui.js"></script>
+<h2>Variables</h2>
+<pre data-result=" = 6">a = 2 + 2 * 2</pre>
+<pre data-result=" = 5">b = a - 1</pre>
+<pre data-result=" = 30">a * b</pre>
 
-    <!-- App references -->
-    <script src="../core/help.js"></script>
-</head>
-<body>
-    <div id="options" class="win-settingsflyout" data-win-control="WinJS.UI.SettingsFlyout" data-win-options="{ width:'narrow' }">
-        <div class="win-header">
-            <button id="backButton" class="win-backbutton" aria-label="Back" onclick="WinJS.UI.SettingsFlyout.show()"></button>
-            <div class="win-label">Options</div>
-        </div>
-        <div class="win-content">
-            <div class="win-settings-section">
-                <p>
-                    <label>Use feet or meters</label>
-                    <label>
-                        <input id="feet" name="feetOrMeters" type="radio" value="Feet" checked />Feet
-                    </label>
-                    <label>
-                        <input id="meters" name="feetOrMeters" type="radio" value="Meters" />Meters
-                    </label>
-                </p>
-                <p>
-                    <label for="refreshInterval">Refresh interval in minutes</label>
-                    <input id="refreshInterval" name="refreshInterval" type="range" min="0" max="15" value="1" />
-                </p>
-                <p>
-                    <label for="movementThreshold">Movement threshold in feet</label>
-                    <input id="movementThreshold" name="movementThreshold" type="range" min="0" max="100" value="50" />
-                </p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<h2>Functions</h2>
+<pre data-result=" fn">pow2(x) = x ^ 2</pre>
+<pre data-result=" = 36">pow2(6)</pre>
+
+<h2>Comments</h2>
+<pre># This is a comment</pre>
+<pre data-result=" = 4">a = 2 * 2 # And this</pre>
+
+<h2>Last result</h2>
+<pre data-result=" = 4">2 * 2</pre>
+<pre data-result=" = 5">last + 1</pre>
