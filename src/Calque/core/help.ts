@@ -1,10 +1,9 @@
-﻿class HelpPage {
+﻿export class HelpPage {
+    isVisible: KnockoutObservable<boolean>;
 
+    constructor() {
+        this.isVisible = ko.observable(false);
+    }
+
+    toggle = WinJS.UI.eventHandler((e) => this.isVisible(!this.isVisible()));
 }
-
-class HelpModule {
-    viewModule = HelpPage;
-    template = { require: 'text!../pages/help.html' };
-}
-
-export = new HelpModule();
