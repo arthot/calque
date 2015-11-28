@@ -99,7 +99,7 @@
     <Content Include="bower_components\winjs\js\ui.min.js.map" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
-    <Content Include="core\main.js" />
+    <TypeScriptCompile Include="core\main.ts" />
     <Content Include="default.html" />
     <Content Include="gulpfile.js" />
     <Content Include="images\BadgeLogo.scale-400.png" />

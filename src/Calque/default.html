@@ -26,23 +26,21 @@
     <script src="bower_components/requirejs/require.js"></script>
     <script src="core/main.js"></script>
 </head>
-<body id="app" class="win-type-body" data-win-control="WinJS.UI.SplitView">
+<body id="app" class="win-type-body" data-bind="winSplitView">
     <header>
         <menu>
             <li>
-                <button class="win-splitviewpanetoggle"
-                        data-win-control="WinJS.UI.SplitViewPaneToggle"
-                        data-win-options="{ splitView: select('#app') }"></button>
+                <button class="win-splitviewpanetoggle" data-bind="winSplitViewPaneToggle: { splitView:  document.getElementById('app') }"></button>
                 <span class="win-h3">Calque</span>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Workspace', icon: 'home'}"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Workspace', icon: 'home'}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Help', icon: 'help', onclick: App.Help.toggle}"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Help', icon: 'help', oninvoked: Help.toggle}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings' }"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Settings', icon: 'settings' }"></div>
             </li>
         </menu>
     </header>
