@@ -42,6 +42,9 @@
     <ProjectGuid>00662f0e-0c02-46a6-a522-89a101c992cd</ProjectGuid>
     <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0'">
     <VisualStudioVersion>14.0</VisualStudioVersion>
@@ -80,6 +83,8 @@
     <Content Include="bower_components\mathjs\dist\math.js" />
     <Content Include="bower_components\mathjs\dist\math.map" />
     <Content Include="bower_components\mathjs\dist\math.min.js" />
+    <Content Include="bower_components\requirejs\require.js" />
+    <Content Include="bower_components\text\text.js" />
     <Content Include="bower_components\winjs\css\ui-dark.css" />
     <Content Include="bower_components\winjs\css\ui-dark.min.css" />
     <Content Include="bower_components\winjs\css\ui-light.css" />
@@ -94,9 +99,7 @@
     <Content Include="bower_components\winjs\js\ui.min.js.map" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
-    <Content Include="core\default.js">
-      <DependentUpon>default.ts</DependentUpon>
-    </Content>
+    <TypeScriptCompile Include="core\main.ts" />
     <Content Include="default.html" />
     <Content Include="gulpfile.js" />
     <Content Include="images\BadgeLogo.scale-400.png" />
@@ -107,11 +110,14 @@
     <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
-    <TypeScriptCompile Include="core\default.ts" />
+    <Content Include="pages\help.html" />
     <Content Include="styles\default.css">
       <DependentUpon>default.less</DependentUpon>
     </Content>
     <Content Include="tsd.json" />
+    <TypeScriptCompile Include="core\app.ts" />
+    <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\workspace.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />

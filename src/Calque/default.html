@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>Calque</title>
 
+    <link href="styles/themes/dark.css" rel="stylesheet" />
+    <link href="styles/default.css" rel="stylesheet" />
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/mathjs/dist/math.js"></script>
@@ -15,38 +18,35 @@
 
     <!-- Knockout -->
     <script src="bower_components/knockout/dist/knockout.debug.js"></script>
-    <script src="bower_components/bower-knockout-mapping/dist/bower-knockout-mapping.js"></script>
-    <script src="bower_components/knockout/dist/knockout.validation.js"></script>
+    <script src="bower_components/bower-knockout-mapping/dist/knockout.mapping.js"></script>
+    <script src="bower_components/knockout-validation/dist/knockout.validation.js"></script>
     <script src="bower_components/knockout-winjs/js/knockout-winjs.js"></script>
     <script src="bower_components/knockout-postbox/build/knockout-postbox.js"></script>
 
-    <!-- Calque references -->
-    <link href="styles/themes/dark.css" rel="stylesheet" />
-    <link href="styles/default.css" rel="stylesheet" />
-    <script src="core/default.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="core/main.js"></script>
 </head>
-<body id="app" class="win-type-body" data-win-control="WinJS.UI.SplitView">
+<body id="app" class="win-type-body" data-bind="winSplitView">
     <header>
         <menu>
             <li>
-                <button class="win-splitviewpanetoggle"
-                        data-win-control="WinJS.UI.SplitViewPaneToggle"
-                        data-win-options="{ splitView: select('#app') }"></button>
+                <button class="win-splitviewpanetoggle" data-bind="winSplitViewPaneToggle: { splitView:  document.getElementById('app') }"></button>
                 <span class="win-h3">Calque</span>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Workspace', icon: 'home'}"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Workspace', icon: 'home'}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Help', icon: 'help'}"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Help', icon: 'help', oninvoked: Help.toggle}"></div>
             </li>
             <li>
-                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Settings', icon: 'settings' }"></div>
             </li>
         </menu>
     </header>
     <main id="workspace">
-        <h2 class="win-h2">SplitView Content area</h2>
+        <h2 class="win-h2">Workspace</h2>
     </main>
+    <help></help>
 </body>
 </html>
