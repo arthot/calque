@@ -32,23 +32,55 @@ header {
     visibility: hidden;
 }
 
+@help-width: 350px;
+
 #help {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     height: 100%;
-    width: 350px;
+    width: @help-width;
     padding: 40px;
     box-sizing: border-box;
     overflow: auto;
     font-family: Arial;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    &.opened {
+        animation-name: help-slide-in;
+    }
+
+    &.closed {
+        animation-name: help-slide-out;
+    }
 
     pre {
         margin: 0.5em 0;
+
         &:after {
             content: attr(data-result);
             color: grey;
         }
+    }
+}
+
+@keyframes help-slide-in {
+    from {
+        right: -@help-width;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes help-slide-out {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -@help-width;
     }
 }

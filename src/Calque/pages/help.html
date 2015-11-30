@@ -1,4 +1,4 @@
-﻿<div data-bind="visible: isVisible">
+﻿<div id="help" data-bind="attr: {class: isVisible() ? 'opened' : 'closed' }">
     <h2 class="win-h2">Expressions</h2>
     <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
     <pre data-result=" = 2i">sqrt(-4)</pre>
