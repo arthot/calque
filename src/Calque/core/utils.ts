@@ -1,7 +1,7 @@
 ﻿declare var math: any;
 
 export class Utils {
-    static scopeClone(scope) {
+    static scopeClone(scope): any {
         var newScope = {};
 
         _.each(scope, function (value, name) {
