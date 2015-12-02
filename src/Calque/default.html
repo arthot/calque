@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Calque</title>
 
-    <link href="styles/themes/light.css" rel="stylesheet" />
     <link href="styles/default.css" rel="stylesheet" />
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -12,7 +11,6 @@
     <script src="bower_components/mathjs/dist/math.js"></script>
 
     <!-- WinJS references -->
-    <link href="bower_components/winjs/css/ui-light.css" rel="stylesheet" />
     <script src="bower_components/winjs/js/base.js"></script>
     <script src="bower_components/winjs/js/ui.js"></script>
 
@@ -25,6 +23,9 @@
 
     <script src="bower_components/requirejs/require.js"></script>
     <script src="core/main.js"></script>
+
+    <link href="bower_components/winjs/css/ui-light.css" rel="stylesheet" />
+    <link href="styles/themes/light.css" rel="stylesheet" />
 </head>
 <body id="app" class="win-type-body" data-bind="winSplitView">
     <header>
@@ -40,7 +41,7 @@
                 <div data-bind="winSplitViewCommand: { label: 'Help', icon: 'help', oninvoked: Help.toggle}"></div>
             </li>
             <li>
-                <div data-bind="winSplitViewCommand: { label: 'Settings', icon: 'settings' }"></div>
+                <div data-bind="winSplitViewCommand: { label: 'Settings', icon: 'settings', oninvoked: Settings.toggle }"></div>
             </li>
         </menu>
     </header>

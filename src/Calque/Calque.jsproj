@@ -118,6 +118,7 @@
     <Content Include="tsd.json" />
     <TypeScriptCompile Include="core\app.ts" />
     <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\settings.ts" />
     <TypeScriptCompile Include="core\utils.ts" />
     <TypeScriptCompile Include="core\workspace.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
