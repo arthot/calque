@@ -20,14 +20,21 @@
                 }
             });
 
-            require(['app'], function (App) {
+            require(['app'], function (a) {
+                var input = <HTMLInputElement>document.getElementById('input');
+                var output = document.getElementById('output');
+
+                var app = new a.Application(input, output);
+
                 ko.components.register("help", {
-                    viewModel: { instance: App.Help },
+                    viewModel: { instance: app.Help },
                     template: { require: 'text!../pages/help.html' }
                 });
 
                 args.setPromise(WinJS.UI.processAll());
-                ko.applyBindings(App);
+                ko.applyBindings(app);
+
+                input.select();
             });
         }
     };

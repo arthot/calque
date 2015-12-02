@@ -99,6 +99,7 @@
     <Content Include="bower_components\winjs\js\ui.min.js.map" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
+    <TypeScriptCompile Include="core\expression.ts" />
     <TypeScriptCompile Include="core\main.ts" />
     <Content Include="default.html" />
     <Content Include="gulpfile.js" />
@@ -117,11 +118,14 @@
     <Content Include="tsd.json" />
     <TypeScriptCompile Include="core\app.ts" />
     <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\utils.ts" />
     <TypeScriptCompile Include="core\workspace.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\winjs\winjs.d.ts" />
     <None Include="styles\default.less" />
