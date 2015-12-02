@@ -133,6 +133,7 @@
     <Content Include="styles\themes\dark.css">
       <DependentUpon>dark.less</DependentUpon>
     </Content>
+    <None Include="styles\themes\template.less" />
     <None Include="styles\themes\dark.less" />
     <Content Include="styles\themes\light.css">
       <DependentUpon>light.less</DependentUpon>

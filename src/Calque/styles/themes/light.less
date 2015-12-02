@@ -1,1 +1,8 @@
-﻿
+﻿@import (reference) "template.less";
+
+@error-color: red;
+@result-color: darken(@prefix-color, 15%);
+@prefix-color: grey;
+@text-color: black;
+
+.template(@error-color, @result-color, @prefix-color, @text-color);
