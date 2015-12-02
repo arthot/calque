@@ -1,13 +1,13 @@
-﻿import utils = require('utils');
-import expr = require('expression');
+﻿import Utils = require('utils');
+import Expression = require('expression');
 
-export class Workspace {
+class Workspace {
     inputEl: HTMLInputElement;
     outputEl: HTMLElement;
 
     raw: string = '';
     lines: any[] = [];
-    expressions: expr.Expression[] = [];
+    expressions: Expression[] = [];
     activeLine: number = 0;
 
     constructor(inputEl: HTMLInputElement, outputEl: HTMLElement) {
@@ -76,13 +76,13 @@ export class Workspace {
 
             if (oldSimilarExpressions.length) {
                 var expression = oldSimilarExpressions[0];
-                expression.eval(scope);
+                if (expression) expression.eval(scope);
             } else {
-                var expression = new expr.Expression(code, scope);
+                var expression = new Expression(code, scope);
                 this.expressions.push(expression);
             }
 
-            scope = utils.Utils.scopeClone(expression.scopeOutput);
+            scope = Utils.scopeClone(expression.scopeOutput);
 
             if (expression.result !== undefined) {
                 scope.last = expression.result;
@@ -152,3 +152,5 @@ export class Workspace {
         this.outputEl.innerHTML = html;
     };
 }
+
+export = Workspace;

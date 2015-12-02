@@ -1,7 +1,7 @@
 ﻿declare var math: any;
-import utils = require('utils');
+import Utils = require('utils');
 
-export class Expression {
+class Expression {
     code: string;
     scopeInput: any;
     scopeOutput: any;
@@ -13,8 +13,8 @@ export class Expression {
 
     constructor(code: string, scope: any) {
         this.code = code;
-        this.scopeInput = utils.Utils.scopeClone(scope);
-        this.scopeOutput = utils.Utils.scopeClone(this.scopeInput);
+        this.scopeInput = Utils.scopeClone(scope);
+        this.scopeOutput = Utils.scopeClone(this.scopeInput);
 
         try {
             this.parse = math.parse(code);
@@ -36,11 +36,13 @@ export class Expression {
     }
 
     eval(scope: any): void {
-        this.scopeInput = utils.Utils.scopeClone(scope);
-        this.scopeOutput = utils.Utils.scopeClone(this.scopeInput);
+        this.scopeInput = Utils.scopeClone(scope);
+        this.scopeOutput = Utils.scopeClone(this.scopeInput);
 
         try {
-            this.result = this.parse.eval(this.scopeOutput);
+            if (this.parse)
+                this.result = this.parse.eval(this.scopeOutput);
+
             this.error = null;
         } catch (e) {
             this.result = null;
@@ -48,3 +50,5 @@ export class Expression {
         }
     }
 }
+
+export = Expression;

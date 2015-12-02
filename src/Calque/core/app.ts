@@ -1,11 +1,13 @@
-﻿import vms = require('help');
-import work = require('workspace');
+﻿import HelpPage = require('help');
+import Workspace = require('workspace');
 
-export class Application {
-    Help = new vms.HelpPage();
-    Workspace: work.Workspace;
+class Application {
+    Help = new HelpPage();
+    Workspace: Workspace;
 
     constructor(inputEl: HTMLInputElement, outputEl: HTMLElement) {
-        this.Workspace = new work.Workspace(inputEl, outputEl);
+        this.Workspace = new Workspace(inputEl, outputEl);
     }
 }
+
+export = Application;

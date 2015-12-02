@@ -1,6 +1,6 @@
 ﻿declare var math: any;
 
-export class Utils {
+class Utils {
     static scopeClone(scope): any {
         var newScope = {};
 
@@ -15,3 +15,5 @@ export class Utils {
         return newScope;
     }
 }
+
+export = Utils;

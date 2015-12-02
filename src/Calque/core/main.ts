@@ -20,11 +20,11 @@
                 }
             });
 
-            require(['app'], function (a) {
+            require(['app'], function (App) {
                 var input = <HTMLInputElement>document.getElementById('input');
                 var output = document.getElementById('output');
 
-                var app = new a.Application(input, output);
+                var app = new App(input, output);
 
                 ko.components.register("help", {
                     viewModel: { instance: app.Help },

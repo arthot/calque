@@ -1,4 +1,4 @@
-﻿export class HelpPage {
+﻿class HelpPage {
     isVisible: KnockoutObservable<boolean>;
 
     constructor() {
@@ -7,3 +7,5 @@
 
     toggle = WinJS.UI.eventHandler((e) => this.isVisible(!this.isVisible()));
 }
+
+export = HelpPage;
