@@ -118,6 +118,7 @@
     <Content Include="tsd.json" />
     <TypeScriptCompile Include="core\app.ts" />
     <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\settings.ts" />
     <TypeScriptCompile Include="core\utils.ts" />
     <TypeScriptCompile Include="core\workspace.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
@@ -133,6 +134,7 @@
     <Content Include="styles\themes\dark.css">
       <DependentUpon>dark.less</DependentUpon>
     </Content>
+    <None Include="styles\themes\template.less" />
     <None Include="styles\themes\dark.less" />
     <Content Include="styles\themes\light.css">
       <DependentUpon>light.less</DependentUpon>

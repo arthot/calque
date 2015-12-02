@@ -46,7 +46,7 @@ header {
     padding: 40px;
     box-sizing: border-box;
     overflow: auto;
-    font-family: Arial;
+    font-family: monospace;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 
@@ -63,7 +63,6 @@ header {
 
         &:after {
             content: attr(data-result);
-            color: grey;
         }
     }
 }
@@ -111,7 +110,6 @@ header {
         border: none;
         outline: none;
         background: none;
-        color: white;
         resize: none;
     }
 
@@ -124,7 +122,6 @@ header {
 
         .prefix:before {
             content: attr(data-prefix);
-            color: lightgrey;
         }
 
         .data {
@@ -134,14 +131,6 @@ header {
 
         .empty {
             visibility: hidden;
-        }
-
-        .result {
-            color: silver;
-        }
-
-        .error {
-            color: red;
         }
     }
 }
