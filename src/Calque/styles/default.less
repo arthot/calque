@@ -1,4 +1,7 @@
 ﻿body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     height: 100%;
 }
 
@@ -82,5 +85,63 @@ header {
 
     to {
         right: -@help-width;
+    }
+}
+
+#workspace {
+    .input, .output {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        white-space: pre;
+    }
+
+    .input {
+        overflow: auto;
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+        resize: none;
+    }
+
+    .output {
+        overflow: hidden;
+
+        div {
+            display: block;
+        }
+
+        .prefix:before {
+            content: attr(data-prefix);
+            color: lightgrey;
+        }
+
+        .data {
+            z-index: 1;
+            position: relative;
+        }
+
+        .empty {
+            visibility: hidden;
+        }
+
+        .result {
+            color: silver;
+        }
+
+        .error {
+            color: red;
+        }
     }
 }
