@@ -141,10 +141,10 @@ class Workspace {
             };
             if (type === 'error') data = expression.error;
 
-            var lineHtml = '<div class="' + type + '">';
-            lineHtml += '<span class="prefix" data-prefix="' + prefix + '"></span>';
-            lineHtml += '<span class="data">' + data + '</span>';
-            lineHtml += '</div>';
+            var lineHtml = `<div class="${type}">` +
+            `<span class="prefix" data-prefix="${prefix}"></span>` +
+            `<span class="data">${data}</span>` +
+            `</div>`;
 
             html += lineHtml;
         });

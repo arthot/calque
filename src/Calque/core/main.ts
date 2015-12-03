@@ -27,7 +27,7 @@
                 var app = new App(input, output);
 
                 ko.components.register("help", {
-                    viewModel: { instance: app.Help },
+                    viewModel: { instance: app.help },
                     template: { require: 'text!../pages/help.html' }
                 });
 
