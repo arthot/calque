@@ -1,24 +1,24 @@
 ﻿<div id="help" data-bind="attr: {class: isVisible() ? 'opened' : 'closed' }">
-    <h2 class="win-h2">Expressions</h2>
+    <h2 class="win-h2" data-bind="text: WinJS.Resources.getString('Expressions').value"></h2>
     <pre data-result=" = 5">sqrt(3^2 + 4^2)</pre>
     <pre data-result=" = 2i">sqrt(-4)</pre>
     <pre data-result=" = 5.08 cm">2 inch to cm</pre>
     <pre data-result=" = 0.70711">cos(45 deg)</pre>
 
-    <h2 class="win-h2">Variables</h2>
+    <h2 class="win-h2" data-bind="text: WinJS.Resources.getString('Variables').value"></h2>
     <pre data-result=" = 6">a = 2 + 2 * 2</pre>
     <pre data-result=" = 5">b = a - 1</pre>
     <pre data-result=" = 30">a * b</pre>
 
-    <h2 class="win-h2">Functions</h2>
+    <h2 class="win-h2" data-bind="text: WinJS.Resources.getString('Functions').value"></h2>
     <pre data-result=" fn">pow2(x) = x ^ 2</pre>
     <pre data-result=" = 36">pow2(6)</pre>
 
-    <h2 class="win-h2">Comments</h2>
+    <h2 class="win-h2" data-bind="text: WinJS.Resources.getString('Comments').value"></h2>
     <pre># This is a comment</pre>
     <pre data-result=" = 4">a = 2 * 2 # And this</pre>
 
-    <h2 class="win-h2">Last result</h2>
+    <h2 class="win-h2" data-bind="text: WinJS.Resources.getString('Last result').value"></h2>
     <pre data-result=" = 4">2 * 2</pre>
     <pre data-result=" = 5">last + 1</pre>
 </div>
