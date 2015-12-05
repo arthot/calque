@@ -22,6 +22,7 @@
     <script src="bower_components/knockout-postbox/build/knockout-postbox.js"></script>
 
     <script src="bower_components/requirejs/require.js"></script>
+    <script src="core/aliases.js"></script>
     <script src="core/main.js"></script>
 
     <link href="bower_components/winjs/css/ui-light.css" rel="stylesheet" />
@@ -32,16 +33,16 @@
         <menu>
             <li>
                 <button class="win-splitviewpanetoggle" data-bind="winSplitViewPaneToggle: { splitView:  document.getElementById('app') }"></button>
-                <span class="win-h3">Calque</span>
+                <span class="win-h3" data-bind="text: loc('Calque')"></span>
             </li>
             <li>
-                <div data-bind="winSplitViewCommand: { label: 'Workspace', icon: 'home'}"></div>
+                <div data-bind="winSplitViewCommand: { label: loc('Workspace'), icon: 'home'}"></div>
             </li>
             <li>
-                <div data-bind="winSplitViewCommand: { label: 'Help', icon: 'help', oninvoked: help.toggle}"></div>
+                <div data-bind="winSplitViewCommand: { label: loc('Help'), icon: 'help', oninvoked: help.toggle}"></div>
             </li>
             <li>
-                <div data-bind="winSplitViewCommand: { label: 'Settings', icon: 'settings', oninvoked: settings.toggle }"></div>
+                <div data-bind="winSplitViewCommand: { label: loc('Switch theme'), icon: 'settings', oninvoked: settings.toggle }"></div>
             </li>
         </menu>
     </header>
