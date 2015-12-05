@@ -99,6 +99,7 @@
     <Content Include="bower_components\winjs\js\ui.min.js.map" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
+    <TypeScriptCompile Include="core\aliases.ts" />
     <TypeScriptCompile Include="core\expression.ts" />
     <TypeScriptCompile Include="core\main.ts" />
     <Content Include="default.html" />
