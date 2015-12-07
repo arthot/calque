@@ -31,6 +31,10 @@ class Workspace {
         }
     }
 
+    select = () => {
+        this.inputEl.select();
+    }
+
     save = () => {
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&

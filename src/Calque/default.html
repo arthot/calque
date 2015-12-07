@@ -36,7 +36,7 @@
                 <span class="win-h3" data-bind="text: loc('Calque')"></span>
             </li>
             <li>
-                <div data-bind="winSplitViewCommand: { label: loc('Workspace'), icon: 'home'}"></div>
+                <div data-bind="winSplitViewCommand: { label: loc('Workspace'), icon: 'home', oninvoked: workspace.select}"></div>
             </li>
             <li>
                 <div data-bind="winSplitViewCommand: { label: loc('Save'), icon: 'save', oninvoked: workspace.save}"></div>
