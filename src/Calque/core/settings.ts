@@ -1,10 +1,12 @@
-﻿class Settings {
+﻿export class Settings {
     marker = 'class';
     markerValue = 'style';
-    theme: Theme = Theme.light;
+
+    theme: KnockoutObservable<Theme>;
 
     constructor() {
-        this.updateTheme();
+        this.theme = ko.observable(Theme.light);
+        this.theme.subscribe(v => this.updateTheme());
     }
 
     updateTheme() {
@@ -20,26 +22,22 @@
         custom_style.setAttribute(this.marker, this.markerValue);
         win_style.setAttribute(this.marker, this.markerValue);
 
-        win_style.href = `bower_components/winjs/css/ui-${Theme[this.theme]}.css`;
-        custom_style.href = `styles/themes/${Theme[this.theme]}.css`;
+        win_style.href = `bower_components/winjs/css/ui-${Theme[this.theme()]}.css`;
+        custom_style.href = `styles/themes/${Theme[this.theme()]}.css`;
 
         document.head.appendChild(win_style);
         document.head.appendChild(custom_style);
     }
 
     toggle = () => {
-        if (this.theme == Theme.dark)
-            this.theme = Theme.light;
+        if (this.theme() == Theme.dark)
+            this.theme(Theme.light);
         else
-            this.theme = Theme.dark;
-
-        this.updateTheme();
+            this.theme(Theme.dark);
     }
 }
 
-enum Theme {
+export enum Theme {
     light,
     dark
 }
-
-export = Settings;
