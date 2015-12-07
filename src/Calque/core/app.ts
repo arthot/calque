@@ -16,8 +16,11 @@ class Application {
     }
 
     restore(data: IOHelper, value: string) {
-        if (value)
+        if (value) {
             this.workspace.inputEl.value = value;
+            this.workspace.handler();
+        }
+
         data.readText('help').done(v => v ? this.help.isVisible(v === 'true') : true);
         data.readText('theme').done(v => this.settings.theme(Settings.Theme[v]));
     }
