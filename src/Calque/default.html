@@ -39,6 +39,9 @@
                 <div data-bind="winSplitViewCommand: { label: loc('Workspace'), icon: 'home'}"></div>
             </li>
             <li>
+                <div data-bind="winSplitViewCommand: { label: loc('Save'), icon: 'save', oninvoked: workspace.save}"></div>
+            </li>
+            <li>
                 <div data-bind="winSplitViewCommand: { label: loc('Help'), icon: 'help', oninvoked: help.toggle}"></div>
             </li>
             <li>

@@ -6,7 +6,7 @@ class Workspace {
     outputEl: HTMLElement;
 
     raw: string = '';
-    lines: any[] = [];
+    lines: string[] = [];
     expressions: Expression[] = [];
     activeLine: number = 0;
 
@@ -29,6 +29,39 @@ class Workspace {
         } catch (e) {
             console.log(e);
         }
+    }
+
+    save = () => {
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
+            !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
+            return;
+        }
+
+        var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+        savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
+        savePicker.fileTypeChoices.insert('Plain Text', <any>[".txt"]);
+        savePicker.suggestedFileName = "Calque";
+
+        savePicker.pickSaveFileAsync().then((file) => {
+            if (file) {
+                Windows.Storage.CachedFileManager.deferUpdates(file);
+                Windows.Storage.FileIO.writeTextAsync(file, this.generateText())
+                    .done(() => Windows.Storage.CachedFileManager.completeUpdatesAsync(file));
+            }
+        });
+    }
+
+    generateText(): string {
+        var text = "";
+
+        this.lines.forEach((line, index) => {
+            var expr = this.expressions.filter(e => e.line == index)[0];
+            if (expr && expr.result !== undefined)
+                text += line + ' = ' + expr.result + '\r\n';
+        });
+
+        return text;
     }
 
     updateActiveLine() {
@@ -142,9 +175,9 @@ class Workspace {
             if (type === 'error') data = expression.error;
 
             var lineHtml = `<div class="${type}">` +
-            `<span class="prefix" data-prefix="${prefix}"></span>` +
-            `<span class="data">${data}</span>` +
-            `</div>`;
+                `<span class="prefix" data-prefix="${prefix}"></span>` +
+                `<span class="data">${data}</span>` +
+                `</div>`;
 
             html += lineHtml;
         });
