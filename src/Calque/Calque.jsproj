@@ -122,11 +122,16 @@
     <TypeScriptCompile Include="core\settings.ts" />
     <TypeScriptCompile Include="core\utils.ts" />
     <TypeScriptCompile Include="core\workspace.ts" />
+    <TypeScriptCompile Include="tests\workspace-tests.ts" />
+    <TypeScriptCompile Include="typings\empower\empower.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
+    <TypeScriptCompile Include="typings\power-assert-formatter\power-assert-formatter.d.ts" />
+    <TypeScriptCompile Include="typings\power-assert\power-assert.d.ts" />
     <TypeScriptCompile Include="typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\winjs\winjs.d.ts" />
