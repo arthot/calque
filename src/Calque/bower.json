@@ -27,6 +27,8 @@
     "knockout-postbox": "~0.5.2",
     "bower-knockout-mapping": "~2.5.0",
     "lodash": "3.10.1",
-    "mathjs": "2.4.2"
+    "mathjs": "2.4.2",
+    "mocha": "2.3.4",
+    "chai": "3.4.2"
   }
 }

@@ -15,9 +15,6 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-less": "^3.0.5",
-    "mocha": "2.3.4",
-    "power-assert": "1.2.0",
-    "gulp-mocha": "2.2.0"
+    "gulp-less": "^3.0.5"
   }
 }

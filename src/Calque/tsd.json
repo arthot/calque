@@ -29,17 +29,14 @@
     "lodash/lodash.d.ts": {
       "commit": "7a3d6944036902996b87981e6150900952b35628"
     },
-    "power-assert-formatter/power-assert-formatter.d.ts": {
-      "commit": "5c3e47967affa3c4128a3875d1664ba206ae1b0f"
-    },
-    "empower/empower.d.ts": {
-      "commit": "5c3e47967affa3c4128a3875d1664ba206ae1b0f"
-    },
-    "power-assert/power-assert.d.ts": {
-      "commit": "5c3e47967affa3c4128a3875d1664ba206ae1b0f"
-    },
     "mocha/mocha.d.ts": {
       "commit": "5c3e47967affa3c4128a3875d1664ba206ae1b0f"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "17dd34132c2a1a4d6a8bf1816effcff3ec922034"
+    },
+    "chai/chai.d.ts": {
+      "commit": "17dd34132c2a1a4d6a8bf1816effcff3ec922034"
     }
   }
 }
