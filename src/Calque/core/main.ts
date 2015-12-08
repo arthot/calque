@@ -14,10 +14,8 @@
             });
 
             require(['app'], function (app) {
-                var input = <HTMLInputElement>document.getElementById('input');
-                var output = document.getElementById('output');
 
-                app.init(input, output);
+                app.init();
 
                 ko.components.register("help", {
                     viewModel: { instance: app.help },
@@ -26,8 +24,6 @@
 
                 args.setPromise(WinJS.UI.processAll());
                 ko.applyBindings(app);
-
-                input.select();
 
                 if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                     app.restore(WinJS.Application.local);

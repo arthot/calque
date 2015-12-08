@@ -2,37 +2,32 @@
 import Expression = require('expression');
 
 class Workspace {
-    inputEl: HTMLInputElement;
-    outputEl: HTMLElement;
+    input = ko.observable('');
+    output = ko.observable('');
 
     raw: string = '';
     lines: string[] = [];
     expressions: Expression[] = [];
     activeLine: number = 0;
+    scrollPosition = ko.observable(0);
+    selectionStart: number = 0;
+    inputHasFocus = ko.observable(true);
 
-    constructor(inputEl: HTMLInputElement, outputEl: HTMLElement) {
-        this.inputEl = inputEl;
-        this.outputEl = outputEl;
-
-        this.inputEl.addEventListener('keydown', this.handler.bind(this));
-        this.inputEl.addEventListener('keyup', this.handler.bind(this));
+    constructor() {
+        this.input.subscribe(this.handler);
     }
 
-    handler() {
-        try {
-            this.updateActiveLine();
-            this.input();
+    handler = () => {
+        this.updateActiveLine();
+        this.processInput();
+    }
 
-            if (this.inputEl.scrollTop !== this.outputEl.scrollTop) {
-                this.outputEl.scrollTop = this.inputEl.scrollTop;
-            }
-        } catch (e) {
-            console.log(e);
-        }
+    syncScroll = (data, ev) => {
+        this.scrollPosition(ev.target.scrollTop);
     }
 
     select = () => {
-        this.inputEl.select();
+        this.inputHasFocus(true);
     }
 
     save = () => {
@@ -68,16 +63,19 @@ class Workspace {
         return text;
     }
 
-    updateActiveLine() {
-        var value = this.inputEl.value;
-        var selectionStart = this.inputEl.selectionStart;
+    onSelect = (data, ev) => {
+        this.selectionStart = ev.target.selectionStart;
+    }
 
-        var match = value.substr(0, selectionStart).match(/\n/g);
+    updateActiveLine() {
+        var value = this.input();
+
+        var match = value.substr(0, this.selectionStart).match(/\n/g);
 
         if (!match) {
             var activeLine = 1;
         } else {
-            var activeLine = value.substr(0, selectionStart).match(/\n/g).length + 1;
+            var activeLine = value.substr(0, this.selectionStart).match(/\n/g).length + 1;
         }
 
         if (this.activeLine !== activeLine) {
@@ -86,8 +84,8 @@ class Workspace {
         }
     }
 
-    input() {
-        var raw = this.inputEl.value;
+    processInput() {
+        var raw = this.input();
         if (raw !== this.raw) {
             this.raw = raw;
             this.lines = this.raw.split("\n");
@@ -186,7 +184,7 @@ class Workspace {
             html += lineHtml;
         });
 
-        this.outputEl.innerHTML = html;
+        this.output(html);
     };
 }
 

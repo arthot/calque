@@ -7,8 +7,8 @@ class Application {
     workspace: Workspace;
     settings: Settings.Settings;
 
-    init(inputEl: HTMLInputElement, outputEl: HTMLElement) {
-        this.workspace = new Workspace(inputEl, outputEl);
+    init() {
+        this.workspace = new Workspace();
         this.settings = new Settings.Settings();
 
         this.help.isVisible.subscribe(v => this.save());
@@ -17,7 +17,7 @@ class Application {
 
     restore(data: IOHelper, value: string) {
         if (value) {
-            this.workspace.inputEl.value = value;
+            this.workspace.input(value);
             this.workspace.handler();
         }
 
