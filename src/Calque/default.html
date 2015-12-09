@@ -23,6 +23,7 @@
 
     <script src="bower_components/requirejs/require.js"></script>
     <script src="core/aliases.js"></script>
+    <script src="core/bindings.js"></script>
     <script src="core/main.js"></script>
 
     <link href="bower_components/winjs/css/ui-light.css" rel="stylesheet" />
@@ -50,8 +51,8 @@
         </menu>
     </header>
     <main id="workspace">
-        <div class="output" id="output"></div>
-        <textarea class="input" id="input"></textarea>
+        <div data-bind="html: workspace.output, prop: { scrollTop: workspace.scrollPosition }" class="output" id="output"></div>
+        <textarea data-bind="textInput: workspace.input, event: { scroll: workspace.syncScroll, select: workspace.onSelect }, hasFocus: workspace.inputHasFocus" class="input" id="input"></textarea>
     </main>
     <help></help>
 </body>

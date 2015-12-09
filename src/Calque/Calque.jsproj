@@ -68,6 +68,7 @@
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js.map" />
+    <Content Include="bower_components\chai\chai.js" />
     <Content Include="bower_components\jquery\dist\jquery.js" />
     <Content Include="bower_components\jquery\dist\jquery.min.js" />
     <Content Include="bower_components\jquery\dist\jquery.min.map" />
@@ -83,6 +84,8 @@
     <Content Include="bower_components\mathjs\dist\math.js" />
     <Content Include="bower_components\mathjs\dist\math.map" />
     <Content Include="bower_components\mathjs\dist\math.min.js" />
+    <Content Include="bower_components\mocha\mocha.css" />
+    <Content Include="bower_components\mocha\mocha.js" />
     <Content Include="bower_components\requirejs\require.js" />
     <Content Include="bower_components\text\text.js" />
     <Content Include="bower_components\winjs\css\ui-dark.css" />
@@ -100,6 +103,7 @@
     <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
     <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
     <TypeScriptCompile Include="core\aliases.ts" />
+    <TypeScriptCompile Include="core\bindings.ts" />
     <TypeScriptCompile Include="core\expression.ts" />
     <TypeScriptCompile Include="core\main.ts" />
     <Content Include="default.html" />
@@ -116,17 +120,23 @@
     <Content Include="styles\default.css">
       <DependentUpon>default.less</DependentUpon>
     </Content>
+    <Content Include="test\tests.html" />
+    <Content Include="test\tests.js" />
     <Content Include="tsd.json" />
     <TypeScriptCompile Include="core\app.ts" />
     <TypeScriptCompile Include="core\help.ts" />
     <TypeScriptCompile Include="core\settings.ts" />
     <TypeScriptCompile Include="core\utils.ts" />
     <TypeScriptCompile Include="core\workspace.ts" />
+    <TypeScriptCompile Include="test\workspace-tests.ts" />
+    <TypeScriptCompile Include="typings\assertion-error\assertion-error.d.ts" />
+    <TypeScriptCompile Include="typings\chai\chai.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
     <TypeScriptCompile Include="typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\winjs\winjs.d.ts" />
