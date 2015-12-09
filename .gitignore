@@ -215,5 +215,5 @@ ModelManifest.xml
 src/Calque/styles/**/*.css
 typings/
 src/Calque/core/**/*.js
-src/Calque/tests/**/*.js
+src/Calque/test/**/*.js
 *.js.map
