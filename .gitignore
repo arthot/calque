@@ -217,3 +217,5 @@ typings/
 src/Calque/core/**/*.js
 src/Calque/test/**/*.js
 *.js.map
+_pkginfo.txt
+BundleArtifacts

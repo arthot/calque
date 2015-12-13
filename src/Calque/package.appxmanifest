@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="00662f0e-0c02-46a6-a522-89a101c992cd" Version="1.0.0.0" Publisher="CN=artem" />
+  <Identity Name="42145KTFlabs.Consolecalculator" Version="1.1.0.0" Publisher="CN=6EEBD90D-84E9-4ED0-9120-169958655B96" />
   <mp:PhoneIdentity PhoneProductId="00662f0e-0c02-46a6-a522-89a101c992cd" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Calque</DisplayName>
-    <PublisherDisplayName>artem</PublisherDisplayName>
+    <DisplayName>Console calculator</DisplayName>
+    <PublisherDisplayName>KTF labs</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <uap:VisualElements DisplayName="Calque" Description="Calque" BackgroundColor="transparent" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+      <uap:VisualElements DisplayName="Console calculator" Description="Calque" BackgroundColor="transparent" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="images\splashscreen.png" />
