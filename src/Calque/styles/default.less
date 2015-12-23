@@ -1,4 +1,7 @@
 ﻿body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     height: 100%;
 }
 
@@ -30,4 +33,106 @@ header {
     /* Make sure pane content doesn't scroll */
     /* if SplitViewCommand label receives focus while pane is closed. */
     visibility: hidden;
+}
+
+@help-width: 350px;
+
+#help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: @help-width;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: auto;
+    font-family: monospace;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    -ms-user-select: text;
+
+    &.opened {
+        animation-name: help-slide-in;
+    }
+
+    &.closed {
+        animation-name: help-slide-out;
+    }
+
+    pre {
+        margin: 0.5em 0;
+
+        &:after {
+            content: attr(data-result);
+        }
+    }
+}
+
+@keyframes help-slide-in {
+    from {
+        right: -@help-width;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes help-slide-out {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -@help-width;
+    }
+}
+
+#workspace {
+    .input, .output {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        white-space: pre;
+    }
+
+    .input {
+        overflow: auto;
+        border: none;
+        outline: none;
+        background: none;
+        resize: none;
+    }
+
+    .output {
+        overflow: hidden;
+
+        div {
+            display: block;
+        }
+
+        .prefix:before {
+            content: attr(data-prefix);
+        }
+
+        .data {
+            z-index: 1;
+            position: relative;
+            -ms-user-select: text;
+        }
+
+        .empty {
+            visibility: hidden;
+        }
+    }
 }

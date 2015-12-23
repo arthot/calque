@@ -1,0 +1,27 @@
+﻿.template(@error-color, @result-color, @prefix-color, @text-color) {
+    #help {
+        pre:after {
+            color: grey;
+        }
+    }
+
+    #workspace {
+        .input {
+            color: @text-color;
+        }
+
+        .output {
+            .prefix:before {
+                color: @prefix-color;
+            }
+
+            .result {
+                color: @result-color;
+            }
+
+            .error {
+                color: @error-color;
+            }
+        }
+    }
+}

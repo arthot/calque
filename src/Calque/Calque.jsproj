@@ -41,6 +41,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>00662f0e-0c02-46a6-a522-89a101c992cd</ProjectGuid>
     <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+    <TypeScriptEmitBOM>true</TypeScriptEmitBOM>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0'">
@@ -51,54 +53,65 @@
   <PropertyGroup>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>Calque_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Calque_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>3FB3C335C5B63C5E4C178A1FF2A0BB4F8FBAB0C9</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="bower.json" />
-    <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.js" />
+    <None Include="bower.json" />
+    <None Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js" />
-    <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js.map" />
-    <Content Include="bower_components\jquery\dist\jquery.js" />
+    <None Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js.map" />
+    <Content Include="bower_components\chai\chai.js" />
+    <None Include="bower_components\jquery\dist\jquery.js" />
     <Content Include="bower_components\jquery\dist\jquery.min.js" />
-    <Content Include="bower_components\jquery\dist\jquery.min.map" />
-    <Content Include="bower_components\knockout-postbox\build\knockout-postbox.js" />
+    <None Include="bower_components\jquery\dist\jquery.min.map" />
+    <None Include="bower_components\knockout-postbox\build\knockout-postbox.js" />
     <Content Include="bower_components\knockout-postbox\build\knockout-postbox.min.js" />
-    <Content Include="bower_components\knockout-validation\dist\knockout.validation.js" />
+    <None Include="bower_components\knockout-validation\dist\knockout.validation.js" />
     <Content Include="bower_components\knockout-validation\dist\knockout.validation.min.js" />
-    <Content Include="bower_components\knockout-validation\dist\knockout.validation.min.js.map" />
+    <None Include="bower_components\knockout-validation\dist\knockout.validation.min.js.map" />
     <Content Include="bower_components\knockout-winjs\js\knockout-winjs.js" />
-    <Content Include="bower_components\knockout\dist\knockout.debug.js" />
+    <None Include="bower_components\knockout\dist\knockout.debug.js" />
     <Content Include="bower_components\knockout\dist\knockout.js" />
     <Content Include="bower_components\lodash\lodash.js" />
-    <Content Include="bower_components\mathjs\dist\math.js" />
-    <Content Include="bower_components\mathjs\dist\math.map" />
+    <None Include="bower_components\mathjs\dist\math.js" />
+    <None Include="bower_components\mathjs\dist\math.map" />
     <Content Include="bower_components\mathjs\dist\math.min.js" />
+    <Content Include="bower_components\mocha\mocha.css" />
+    <Content Include="bower_components\mocha\mocha.js" />
+    <Content Include="bower_components\requirejs\require.js" />
+    <Content Include="bower_components\text\text.js" />
     <Content Include="bower_components\winjs\css\ui-dark.css" />
     <Content Include="bower_components\winjs\css\ui-dark.min.css" />
     <Content Include="bower_components\winjs\css\ui-light.css" />
     <Content Include="bower_components\winjs\css\ui-light.min.css" />
     <Content Include="bower_components\winjs\fonts\Symbols.ttf" />
-    <Content Include="bower_components\winjs\js\base.js" />
+    <None Include="bower_components\winjs\js\base.js" />
     <Content Include="bower_components\winjs\js\base.min.js" />
-    <Content Include="bower_components\winjs\js\base.min.js.map" />
+    <None Include="bower_components\winjs\js\base.min.js.map" />
     <Content Include="bower_components\winjs\js\en-US\ui.strings.js" />
-    <Content Include="bower_components\winjs\js\ui.js" />
+    <None Include="bower_components\winjs\js\ui.js" />
     <Content Include="bower_components\winjs\js\ui.min.js" />
-    <Content Include="bower_components\winjs\js\ui.min.js.map" />
-    <Content Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
-    <Content Include="bower_components\winjs\js\WinJS.intellisense.js" />
-    <Content Include="core\default.js">
-      <DependentUpon>default.ts</DependentUpon>
-    </Content>
+    <None Include="bower_components\winjs\js\ui.min.js.map" />
+    <None Include="bower_components\winjs\js\WinJS.intellisense-setup.js" />
+    <None Include="bower_components\winjs\js\WinJS.intellisense.js" />
+    <TypeScriptCompile Include="core\aliases.ts" />
+    <TypeScriptCompile Include="core\bindings.ts" />
+    <TypeScriptCompile Include="core\expression.ts" />
+    <TypeScriptCompile Include="core\main.ts" />
+    <None Include="Calque_StoreKey.pfx" />
     <Content Include="default.html" />
-    <Content Include="gulpfile.js" />
+    <None Include="gulpfile.js" />
     <Content Include="images\BadgeLogo.scale-400.png" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
     <Content Include="images\SplashScreen.scale-200.png" />
@@ -107,22 +120,37 @@
     <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
-    <TypeScriptCompile Include="core\default.ts" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="pages\help.html" />
     <Content Include="styles\default.css">
       <DependentUpon>default.less</DependentUpon>
     </Content>
-    <Content Include="tsd.json" />
+    <None Include="test\tests.html" />
+    <None Include="test\tests.js" />
+    <None Include="tsd.json" />
+    <TypeScriptCompile Include="core\app.ts" />
+    <TypeScriptCompile Include="core\help.ts" />
+    <TypeScriptCompile Include="core\settings.ts" />
+    <TypeScriptCompile Include="core\utils.ts" />
+    <TypeScriptCompile Include="core\workspace.ts" />
+    <TypeScriptCompile Include="test\workspace-tests.ts" />
+    <TypeScriptCompile Include="typings\assertion-error\assertion-error.d.ts" />
+    <TypeScriptCompile Include="typings\chai\chai.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\knockout.mapping\knockout.mapping.d.ts" />
     <TypeScriptCompile Include="typings\knockout.validation\knockout.validation.d.ts" />
     <TypeScriptCompile Include="typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
+    <TypeScriptCompile Include="typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\winjs\winjs.d.ts" />
     <None Include="styles\default.less" />
-    <Content Include="package.json" />
+    <None Include="package.json" />
     <Content Include="styles\themes\dark.css">
       <DependentUpon>dark.less</DependentUpon>
     </Content>
+    <None Include="styles\themes\template.less" />
     <None Include="styles\themes\dark.less" />
     <Content Include="styles\themes\light.css">
       <DependentUpon>light.less</DependentUpon>
@@ -133,6 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4a0dddb5-7a95-4fbf-97cc-616d07737a77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="strings\en-US\resources.resjson" />
+    <PRIResource Include="strings\ru-RU\resources.resjson" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />

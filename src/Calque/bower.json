@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
+    "requirejs": "2.1.22",
+    "text": "2.0.14",
     "jquery": "2.1.4",
     "winjs": "~4.4.0",
     "knockout-winjs": "~2.4.0",
@@ -25,6 +27,8 @@
     "knockout-postbox": "~0.5.2",
     "bower-knockout-mapping": "~2.5.0",
     "lodash": "3.10.1",
-    "mathjs": "2.4.2"
+    "mathjs": "2.4.2",
+    "mocha": "2.3.4",
+    "chai": "3.4.2"
   }
 }
