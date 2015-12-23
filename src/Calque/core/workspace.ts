@@ -22,6 +22,12 @@ class Workspace {
         this.processInput();
     }
 
+    keyup = (vm, ev) => {
+        if (ev.target.value !== this.input()) {
+            this.input(ev.target.value);
+        }
+    }
+
     syncScroll = (data, ev) => {
         this.scrollPosition(ev.target.scrollTop);
     }
