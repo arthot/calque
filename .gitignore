@@ -219,3 +219,5 @@ src/Calque/test/**/*.js
 *.js.map
 _pkginfo.txt
 BundleArtifacts
+_language-*.appx
+_scale-*.appx
