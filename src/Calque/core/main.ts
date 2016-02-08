@@ -13,24 +13,32 @@
                 }
             });
 
-            require(['app'], function (app) {
+            args.setPromise(WinJS.Promise.join({
+                ui: WinJS.UI.processAll(),
+                ko: new WinJS.Promise((c, e) => {
+                    require(['app'], function (app) {
+                        try {
+                            app.init();
 
-                app.init();
+                            ko.components.register("help", {
+                                viewModel: { instance: app.help },
+                                template: { require: 'text!../pages/help.html' }
+                            });
 
-                ko.components.register("help", {
-                    viewModel: { instance: app.help },
-                    template: { require: 'text!../pages/help.html' }
-                });
+                            ko.applyBindings(app);
 
-                args.setPromise(WinJS.UI.processAll());
-                ko.applyBindings(app);
-
-                if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
-                    app.restore(WinJS.Application.local);
-                } else {
-                    app.restore(WinJS.Application.local, WinJS.Application.sessionState.value);
-                }
-            });
+                            if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
+                                app.restore(WinJS.Application.local);
+                            } else {
+                                app.restore(WinJS.Application.local, WinJS.Application.sessionState.value);
+                            }
+                            c();
+                        } catch (err) {
+                            e(err);
+                        }
+                    });
+                })
+            }));
         }
     };
 
@@ -39,9 +47,18 @@
     }
 
     app.oncheckpoint = function (args) {
-        require(['app'], function (app) {
-            WinJS.Application.sessionState.value = app.workspace.inputEl.value;
-        });
+        args.setPromise(new WinJS.Promise((c, e) => {
+            require(['app'], (application) => {
+                try {
+                    if (!app.sessionState) app.sessionState = {};
+                    app.sessionState.value = application.workspace.input();
+                    c();
+                }
+                catch (err) {
+                    e(err);
+                }
+            });
+        }));
     };
 
     app.start();
