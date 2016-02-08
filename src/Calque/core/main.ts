@@ -1,4 +1,5 @@
-﻿(function () {
+﻿declare var WinJSContrib: any;
+(function () {
     "use strict";
 
     var app = WinJS.Application;
@@ -32,6 +33,10 @@
                             } else {
                                 app.restore(WinJS.Application.local, WinJS.Application.sessionState.value);
                             }
+
+                            var appInsight = new WinJSContrib.WinRT.AppInsight({ instrumentationKey: "053c50b0-8c79-4388-994f-de953bd3151d" });
+                            appInsight.tracker.trackEvent("app start");
+
                             c();
                         } catch (err) {
                             e(err);

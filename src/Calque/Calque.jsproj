@@ -69,6 +69,7 @@
     </AppxManifest>
     <None Include="bower.json" />
     <None Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.js" />
+    <Content Include="bower_components\ApplicationInsights-JS\dist\ai.0.js" />
     <Content Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js" />
     <None Include="bower_components\bower-knockout-mapping\dist\knockout.mapping.min.js.map" />
     <Content Include="bower_components\chai\chai.js" />
@@ -110,6 +111,7 @@
     <TypeScriptCompile Include="core\expression.ts" />
     <TypeScriptCompile Include="core\main.ts" />
     <None Include="Calque_StoreKey.pfx" />
+    <Content Include="core\winjscontrib.winrt.appinsight.js" />
     <Content Include="default.html" />
     <None Include="gulpfile.js" />
     <Content Include="images\BadgeLogo.scale-400.png" />

@@ -29,6 +29,7 @@
     "lodash": "3.10.1",
     "mathjs": "2.4.2",
     "mocha": "2.3.4",
-    "chai": "3.4.2"
+    "chai": "3.4.2",
+    "ApplicationInsights-JS": "0.21.5"
   }
 }
