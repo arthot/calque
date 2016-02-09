@@ -22,7 +22,7 @@ class Application {
         }
 
         data.readText('help').done(v => v ? this.help.isVisible(v === 'true') : true);
-        data.readText('theme').done(v => this.settings.theme(Settings.Theme[v]));
+        data.readText('theme').done(v => { if (v != "undefined") this.settings.theme(Settings.Theme[v]) });
     }
 
     save() {
