@@ -56,7 +56,7 @@
     </header>
     <main id="workspace">
         <div data-bind="html: workspace.output, prop: { scrollTop: workspace.scrollPosition }" class="output" id="output"></div>
-        <textarea data-bind="textInput: workspace.input, event: { scroll: workspace.syncScroll, select: workspace.onSelect, keyup: workspace.keyup }, hasFocus: workspace.inputHasFocus" class="input" id="input"></textarea>
+        <textarea data-bind="textInput: workspace.input, event: { scroll: workspace.syncScroll, select: workspace.onSelect, keyup: workspace.keyup }, hasFocus: workspace.inputHasFocus" class="input" id="input" spellcheck="false"></textarea>
     </main>
     <help></help>
 </body>
