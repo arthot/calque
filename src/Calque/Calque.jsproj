@@ -40,7 +40,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>00662f0e-0c02-46a6-a522-89a101c992cd</ProjectGuid>
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <TypeScriptModuleKind>amd</TypeScriptModuleKind>
     <TypeScriptEmitBOM>true</TypeScriptEmitBOM>
   </PropertyGroup>
